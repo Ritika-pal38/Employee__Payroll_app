@@ -18,12 +18,12 @@ import java.util.List;
         @Autowired
         private EmployeeService employeeService;
 
-        @PostMapping("/add")
+        @PostMapping
         public EmployeeDTO createEmployee(@RequestBody EmployeeDTO employeeDTO) {
             return employeeService.createEmployee(employeeDTO);
         }
 
-        @GetMapping("/all")
+        @GetMapping
         public List<EmployeeDTO> getAllEmployees() {
             return employeeService.getAllEmployees();
         }
