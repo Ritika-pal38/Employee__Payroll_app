@@ -27,4 +27,15 @@ import java.util.List;
         public List<EmployeeDTO> getAllEmployees() {
             return employeeService.getAllEmployees();
         }
+        @PutMapping("/{id}")
+        public EmployeeDTO updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO) {
+            return employeeService.updateEmployee(id, employeeDTO);
+        }
+
+        // DELETE - Remove Employee
+        @DeleteMapping("/{id}")
+        public String deleteEmployee(@PathVariable Long id) {
+            employeeService.deleteEmployee(id);
+            return "Employee with ID " + id + " deleted successfully!";
+        }
     }
