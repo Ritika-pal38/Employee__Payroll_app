@@ -10,16 +10,17 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "employees")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private double salary;
 
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
 }
